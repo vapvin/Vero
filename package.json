@@ -1,11 +1,16 @@
 {
   "name": "vero",
   "version": "1.0.0",
-  "main": "index.js",
   "repository": "https://github.com/vapvin/Vero",
   "author": "vapvin <tpehdj12@daum.net>",
   "license": "MIT",
   "dependencies": {
     "express": "^4.17.1"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.4"
+  },
+  "scripts": {
+    "start": "nodemon index.js"
   }
 }
