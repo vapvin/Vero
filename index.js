@@ -1,18 +1,17 @@
-const express = require('express');
+import express from 'express';
 const app = express();
 
 const PORT = 4000
 
-function handleListen(){
-    console.log(`Listening On Port: http://localhost:${PORT}`);
+const handleListen = () =>console.log(`Listening On Port: http://localhost:${PORT}`);
+
+const homeRes =(req, res) =>res.send(`<h1>Hello, World</h1>`);
+const meRes = (req, res) => res.send("My Site");
+const middles = (req, res, next) => {
+    console.log('middles');
+    next();
 }
-function homeRes(req, res){
-    console.log(req);
-    res.send(`<h1>Hello, World</h1>`);
-}
-function meRes(req, res){
-    res.send("My Site");
-}
-app.get("/", homeRes);
+
+app.get("/", middles, homeRes);
 app.get("/me", meRes);
 app.listen(PORT, handleListen);
