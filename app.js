@@ -3,6 +3,8 @@ import logger from 'morgan';
 import helmet from 'helmet';
 import cookieParser from 'cookie-parser';
 import bodyParser from 'body-parser';
+import userRouter from "./Router/userRouter";
+
 const app = express();
 
 
@@ -17,5 +19,6 @@ app.use(logger("dev"));
 
 app.get("/", homeRes);
 app.get("/me", meRes);
+app.use("/user", userRouter);
 
 export default app;
