@@ -16,7 +16,7 @@ const EDIT_VIDEO = '/:id/edit';
 const DELETE_VIDEO = '/:id/delete';
 
 const routes = {
-    home: HOME,
+    main: MAIN,
     signup: SIGNUP,
     signin: SIGNIN,
     signout: SIGNOUT,

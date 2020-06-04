@@ -6,12 +6,9 @@ import bodyParser from 'body-parser';
 import userRouter from './Router/userRouter';
 import videoRouter from './Router/videoRouter';
 import mainRouter from './Router/mainRouter';
+import routes from './routes';
 
 const app = express();
-
-
-const homeRes =(req, res) =>res.send(`<h1>Hello, World</h1>`);
-const meRes = (req, res) => res.send("My Site");
 
 app.use(cookieParser());
 app.use(bodyParser.json());
@@ -19,9 +16,8 @@ app.use(bodyParser.urlencoded({extend: true}));
 app.use(helmet());
 app.use(logger("dev"));
 
-app.use("/", mainRouter);
-
-app.use("/users", userRouter);
-app.use("/videos", videoRouter);
+app.use(routes.main, mainRouter);
+app.use(routes.users, userRouter);
+app.use(routes.videos, videoRouter);
 
 export default app;
