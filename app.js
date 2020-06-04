@@ -3,7 +3,9 @@ import logger from 'morgan';
 import helmet from 'helmet';
 import cookieParser from 'cookie-parser';
 import bodyParser from 'body-parser';
-import userRouter from "./Router/userRouter";
+import userRouter from './Router/userRouter';
+import videoRouter from './Router/videoRouter';
+import mainRouter from './Router/mainRouter';
 
 const app = express();
 
@@ -17,8 +19,9 @@ app.use(bodyParser.urlencoded({extend: true}));
 app.use(helmet());
 app.use(logger("dev"));
 
-app.get("/", homeRes);
-app.get("/me", meRes);
+app.use("/", mainRouter);
+
 app.use("/user", userRouter);
+app.use("/video", videoRouter);
 
 export default app;
