@@ -21,7 +21,7 @@ app.use(logger("dev"));
 
 app.use("/", mainRouter);
 
-app.use("/user", userRouter);
-app.use("/video", videoRouter);
+app.use("/users", userRouter);
+app.use("/videos", videoRouter);
 
 export default app;
