@@ -1,4 +1,4 @@
-export const singUp = (req, res) => res.render("signup");
+export const sign = (req, res) => res.render("sign");
 export const signIn = (req, res) => res.render("signin");
 export const signOut = (req, res) => res.render("signout");
 export const users = (req,res) => res.render("users");

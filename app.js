@@ -7,6 +7,7 @@ import userRouter from './Router/userRouter';
 import videoRouter from './Router/videoRouter';
 import mainRouter from './Router/mainRouter';
 import routes from './routes';
+import {localsMiddleware} from "./middlewares";
 
 const app = express();
 
@@ -16,10 +17,7 @@ app.use(cookieParser());
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extend: true}));
 app.use(logger("dev"));
-
-app.use((req, res, next) => {
-
-})
+app.use(localsMiddleware)
 
 app.use(routes.main, mainRouter);
 app.use(routes.users, userRouter);
