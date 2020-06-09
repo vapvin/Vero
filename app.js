@@ -10,12 +10,16 @@ import routes from './routes';
 
 const app = express();
 
+app.use(helmet());
 app.set("view engine", "pug");
 app.use(cookieParser());
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extend: true}));
-app.use(helmet());
 app.use(logger("dev"));
+
+app.use((req, res, next) => {
+
+})
 
 app.use(routes.main, mainRouter);
 app.use(routes.users, userRouter);
