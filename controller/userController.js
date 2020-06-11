@@ -3,8 +3,17 @@ export const getSign = (req, res) => {
 };
 
 export const postSign = (req, res) => {
-    console.log(req.body);
-    res.render("sign", {pageTitle: "Sign Up"});
+    const {
+        body: { name, email, password, password2}
+    } = req;
+    if(password !== password2){
+        res.status(400);
+        res.render("join", {pageTitle: "Join"});
+    } else {
+        // To Do: Register User
+        // To Do: Log user in
+        res.redirect(routes.home);
+    }
 }
 export const signIn = (req, res) => res.render("signin", {pageTitle: "Sign In"});
 export const signOut = (req, res) => res.render("signout", {pageTitle: "Sign Out"});
