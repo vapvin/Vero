@@ -12,10 +12,13 @@ export const postSign = (req, res) => {
     } else {
         // To Do: Register User
         // To Do: Log user in
-        res.redirect(routes.home);
+        res.redirect(routes.main);
     }
 }
 export const signIn = (req, res) => res.render("signin", {pageTitle: "Sign In"});
+export const postLogin = (req, res) => {
+    res.redirect(routes.main);
+}
 export const signOut = (req, res) => res.render("signout", {pageTitle: "Sign Out"});
 export const users = (req,res) => res.render("users", {pageTitle: "Users"});
 export const userDetail = (req, res) => res.render("userDetail", {pageTitle: "User Detail"});
