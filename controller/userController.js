@@ -16,7 +16,7 @@ export const postSign = (req, res) => {
     }
 }
 export const signIn = (req, res) => res.render("signin", {pageTitle: "Sign In"});
-export const postLogin = (req, res) => {
+export const posSignIn = (req, res) => {
     res.redirect(routes.main);
 }
 export const signOut = (req, res) => res.render("signout", {pageTitle: "Sign Out"});
