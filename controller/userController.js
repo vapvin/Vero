@@ -20,7 +20,11 @@ export const signIn = (req, res) => res.render("signin", {pageTitle: "Sign In"})
 export const posSignIn = (req, res) => {
     res.redirect(routes.main);
 }
-export const signOut = (req, res) => res.render("signout", {pageTitle: "Sign Out"});
+export const signOut = (req, res) => {
+    res.redirect(routes.main);
+};
+
+
 export const users = (req,res) => res.render("users", {pageTitle: "Users"});
 export const userDetail = (req, res) => res.render("userDetail", {pageTitle: "User Detail"});
 export const editProfile = (req, res) => res.render("editProfile", {pageTitle: "Edit Profile"});
