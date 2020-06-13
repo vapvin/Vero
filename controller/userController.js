@@ -1,3 +1,4 @@
+import routes from "../routes";
 export const getSign = (req, res) => {
     res.render("sign", {pageTitle: "Sign Up"});
 };
