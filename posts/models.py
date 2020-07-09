@@ -5,4 +5,5 @@ class Posts(core_models.TimeStampedModel):
 
     """ Post Model Definition """
 
-    pass
+    name = models.CharField(max_length=140)
+    content = models.TextField()
