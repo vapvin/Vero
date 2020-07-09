@@ -1,6 +1,7 @@
 from django.db import models
+from core import models as core_models
 
-class Posts(models.Model):
+class Posts(core_models.TimeStampedModel):
 
     """ Post Model Definition """
 

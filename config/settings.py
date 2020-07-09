@@ -40,6 +40,7 @@ DJANGO_APPS = [
 ]
 
 PROJECT_APPS = [
+    "core.apps.CoreConfig",
     "posts.apps.PostsConfig",
     "portfolios.apps.PortfoliosConfig",
     "lists.apps.ListsConfig",
