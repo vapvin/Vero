@@ -18,7 +18,9 @@ class ProductType(AbstractItem):
 
     """ ProductType Model Definition """
 
-    pass
+    class Meta:
+    
+        verbose_name = "Types"
 
 class PortFolioModel(core_models.TimeStampedModel):
     """ Class Portfolio Definition """
@@ -32,3 +34,4 @@ class PortFolioModel(core_models.TimeStampedModel):
 
     def __str__(self):
         return self.name
+
