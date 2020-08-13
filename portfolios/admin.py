@@ -1,5 +1,6 @@
 from django.contrib import admin
 from . import models
+from django.utils.html import mark_safe
 
 @admin.register(models.ProductType)
 class ProductTypeAdmin(admin.ModelAdmin):
@@ -39,5 +40,8 @@ class PortFolioAdmin(admin.ModelAdmin):
 @admin.register(models.Photo)
 class PhotoAdmin(admin.ModelAdmin):
 
-    pass
+    list_display = ('__str__', 'get_thumb')
 
+    def get_thumb(self,obj):
+        return mark_safe(f'<img src="{obj.file.url}" width="50px" />')
+    get_thumb.short_description = "Thumbnail"
