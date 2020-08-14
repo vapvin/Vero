@@ -7,6 +7,10 @@ class ProductTypeAdmin(admin.ModelAdmin):
 
     list_display = ("name",)
 
+class PhotoInline(admin.TabularInline):
+
+    model = models.Photo
+
 @admin.register(models.PortFolioModel)
 class PortFolioAdmin(admin.ModelAdmin):
 
@@ -31,10 +35,14 @@ class PortFolioAdmin(admin.ModelAdmin):
         "skills"
     )
 
+    raw_id_fields = ("skills", )
+
     search_fields = ("=skills", "^name")
 
     def count_photos(self, obj):
         return obj.photos.count()
+
+
 
 
 @admin.register(models.Photo)
