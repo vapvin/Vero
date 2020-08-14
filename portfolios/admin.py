@@ -42,6 +42,8 @@ class PortFolioAdmin(admin.ModelAdmin):
     def count_photos(self, obj):
         return obj.photos.count()
 
+    def save(self, *args, **kwargs):
+        super(ModelName, self).save(*args, **kwargs)
 
 
 
