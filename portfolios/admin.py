@@ -43,7 +43,8 @@ class PortFolioAdmin(admin.ModelAdmin):
         return obj.photos.count()
 
     def save(self, *args, **kwargs):
-        super(ModelName, self).save(*args, **kwargs)
+        self.city = str.capitalize(self.city)
+        super().save(*args, **kwargs)
 
 
 
