@@ -15,3 +15,6 @@ class PortfolioLists(core_models.TimeStampedModel):
 
     def __str__(self):
         return self.name
+
+    def count_portfolio(self):
+        return self.portfolio.count()

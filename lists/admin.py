@@ -9,9 +9,11 @@ class PostListAdmin(admin.ModelAdmin):
 
     pass
 
+
 @admin.register(models.PortfolioLists)
-class PortfolioAdmin(admin.ModelAdmin):
+class PortfolioListAdmin(admin.ModelAdmin):
 
-    """ List Admin Definition """
-
-    pass
+    list_display = (
+        "name",
+        "count_portfolio",
+    )

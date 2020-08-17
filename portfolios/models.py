@@ -22,6 +22,17 @@ class ProductType(AbstractItem):
     
         verbose_name = "Types"
 
+class Photo(core_models.TimeStampedModel):
+
+    """ Photo Model Definition """
+
+    caption = models.CharField(max_length=80)
+    file = models.ImageField(upload_to="portfolio_photos")
+    PortFolioModel = models.ForeignKey("PortFolioModel", related_name="photos", on_delete=models.CASCADE)
+
+    def __str__(self):
+        return self.caption
+
 class PortFolioModel(core_models.TimeStampedModel):
     """ Class Portfolio Definition """
 
@@ -34,4 +45,5 @@ class PortFolioModel(core_models.TimeStampedModel):
 
     def __str__(self):
         return self.name
+
 
