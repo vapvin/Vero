@@ -44,6 +44,9 @@ PROJECT_APPS = [
     "posts.apps.PostsConfig",
     "portfolios.apps.PortfoliosConfig",
     "lists.apps.ListsConfig",
+    "ckeditor",
+    "ckeditor_uploader",
+    "markdownx"
 ]
 
 INSTALLED_APPS = DJANGO_APPS + PROJECT_APPS
@@ -63,7 +66,7 @@ ROOT_URLCONF = "config.urls"
 TEMPLATES = [
     {
         "BACKEND": "django.template.backends.django.DjangoTemplates",
-        "DIRS": [],
+        "DIRS": [os.path.join(BASE_DIR, "templates")],
         "APP_DIRS": True,
         "OPTIONS": {
             "context_processors": [
@@ -120,8 +123,31 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/2.2/howto/static-files/
 
+STATIC_ROOT = os.path.join(BASE_DIR, "static")
+
 STATIC_URL = "/static/"
 
 MEDIA_ROOT = os.path.join(BASE_DIR, "uploads")
 
 MEDIA_URL = "/media/"
+
+CKEDITOR_UPLOAD_PATH = os.path.join(MEDIA_ROOT, "posteditor")
+
+# AWS QUERY STRING
+
+AWS_QUERYSTRING_AUTH = False
+
+MARKDOWNX_MARKDOWN_EXTENSIONS = [
+    'markdown.extensions.extra',
+    'markdown.extensions.toc',
+    'markdown.extensions.codehilite',
+    'markdown.extensions.fenced_code',
+]
+
+MARKDOWNX_MARKDOWN_EXTENSION_CONFIGS = {
+    'markdown.extensions.codehilite': {
+        'linenums': True,
+        'use_pygments': True,
+        'noclasses': True
+    }
+}

@@ -1,0 +1,10 @@
+{% extends 'base.html' %}
+
+
+{% block content %}
+    {% for post in posts %}
+        <h1>{{post.name}}</h1>
+        <span>작성자: {{post.author}}</span>
+        <span>작성일: {{post.created}}</span>
+    {% endfor %}
+{% endblock content %}

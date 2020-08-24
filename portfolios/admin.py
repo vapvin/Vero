@@ -35,8 +35,6 @@ class PortFolioAdmin(admin.ModelAdmin):
         "skills"
     )
 
-    raw_id_fields = ("skills", )
-
     search_fields = ("=skills", "^name")
 
     def count_photos(self, obj):

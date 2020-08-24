@@ -1,5 +1,5 @@
 {
-  "python.pythonPath": "/Users/vins/.local/share/virtualenvs/vero-lDDPqZ3H/bin/python",
+  "python.pythonPath": "/home/vins/.local/share/virtualenvs/Vero-IsuClgoZ/bin/python",
   "python.linting.flake8Enabled": true,
   "python.linting.pylintEnabled": false,
   "python.linting.enabled": true,
